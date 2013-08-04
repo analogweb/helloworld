@@ -7,11 +7,10 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 import org.analogweb.annotation.As;
-import org.analogweb.annotation.Scope;
+import org.analogweb.annotation.Header;
 
-
+@Header
 @As("User-Agent")
-@Scope("header")
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.PARAMETER,ElementType.ANNOTATION_TYPE})
 @Inherited

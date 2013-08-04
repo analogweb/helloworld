@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
-public class Foo{
+public class FooBean{
     @XmlElement
     private String baa = "baz";
     

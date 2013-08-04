@@ -1,19 +1,19 @@
 package org.analogweb.helloworld;
 
-import org.analogweb.annotation.On;
-import org.analogweb.core.direction.HttpStatus;
-import org.analogweb.core.direction.Text;
+import org.analogweb.annotation.Route;
+import org.analogweb.core.response.HttpStatus;
+import org.analogweb.core.response.Text;
 
-@On("/inherit")
+@Route("/inherit")
 public class HelloWorldInheritance extends HelloWorld {
 
-    @On
+    @Route
     @Override
     public Text helloworld(){
         return Text.with("hello inhelit world!");
     }
 
-    @On
+    @Route
     public HttpStatus doAnything(){
         return HttpStatus.FORBIDDEN.byReasonOf("nothing to do!");
     }
