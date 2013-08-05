@@ -10,11 +10,11 @@ public class HelloWorldInheritance extends HelloWorld {
     @Route
     @Override
     public Text helloworld(){
-        return Text.with("hello inhelit world!");
+        return Text.with("hello inherit world!");
     }
 
     @Route
-    public HttpStatus doAnything(){
+    public HttpStatus forbidden(){
         return HttpStatus.FORBIDDEN.byReasonOf("nothing to do!");
     }
 
