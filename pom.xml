@@ -2,7 +2,7 @@
 
 The MIT Lisence
 
-Copyright (c) 2011, Analog Web Framework Development Team.
+Copyright (c) 2011 - 2013, Analog Web Framework Development Team.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -29,14 +29,14 @@ THE SOFTWARE.
 	<groupId>org.analogiweb</groupId>
 	<artifactId>analogweb-helloworld</artifactId>
 	<packaging>war</packaging>
-	<version>0.7.0-SNAPSHOT</version>
+	<version>0.8.0-SNAPSHOT</version>
 	<url>https://github.com/analogweb</url>
 	<organization>
 		<name>Analog Web Framework Development Team</name>
 	</organization>
 	<issueManagement />
 	<ciManagement />
-	<inceptionYear>2011</inceptionYear>
+	<inceptionYear>2013</inceptionYear>
 	<contributors />
 	<scm>
 		<connection>scm:git:git@github.com:analogweb/helloworld.git</connection>
@@ -59,7 +59,7 @@ THE SOFTWARE.
 	<parent>
 		<groupId>org.analogweb</groupId>
 		<artifactId>analogweb-parent-modules</artifactId>
-		<version>3</version>
+		<version>4</version>
 		<relativePath />
 	</parent>
 	<build>
@@ -73,24 +73,13 @@ THE SOFTWARE.
 					<encoding>${project.build.sourceEncoding}</encoding>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.mortbay.jetty</groupId>
-				<artifactId>jetty-maven-plugin</artifactId>
-				<version>8.1.3.v20120416</version>
-				<configuration>
-					<scanIntervalSeconds>5</scanIntervalSeconds>
-					<webAppConfig>
-						<contextPath>/</contextPath>
-					</webAppConfig>
-				</configuration>
-			</plugin>
 		</plugins>
 	</build>
 	<dependencies>
 		<dependency>
 			<groupId>org.analogweb</groupId>
 			<artifactId>analogweb-core</artifactId>
-			<version>0.7.0-SNAPSHOT</version>
+			<version>0.8.0-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 </project>
