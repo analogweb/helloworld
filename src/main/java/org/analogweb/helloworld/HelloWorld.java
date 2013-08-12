@@ -4,6 +4,7 @@ import java.net.URI;
 
 import org.analogweb.Renderable;
 import org.analogweb.annotation.Bean;
+import org.analogweb.annotation.PathVariable;
 import org.analogweb.annotation.RequestFormats;
 import org.analogweb.annotation.Route;
 import org.analogweb.annotation.XmlType;
@@ -35,9 +36,15 @@ public class HelloWorld {
         return Text.with("Hello World");
     }
 
+    @Route("hello/{name}/world")
+    public Text helloworld(@PathVariable("name") String name) {
+        log.info(String.format("hello %s world!", name));
+        return Text.with(String.format("Hello %s World", name));
+    }
+
     @Route
     public Text helloUserAgent(@UserAgent String userAgent) {
-        return Text.with("Hello World " + userAgent);
+        return Text.with(String.format("Hello World %s", userAgent));
     }
 
     @Route
@@ -49,7 +56,7 @@ public class HelloWorld {
     @Route
     @RequestFormats(MediaTypes.APPLICATION_XML)
     public Renderable helloXmlValue(@XmlType FooBean foo) {
-        if(foo == null){
+        if (foo == null) {
             return HttpStatus.BAD_REQUEST.byReasonOf("XML entity required.");
         }
         return Text.with("Hello World " + foo.getBaa());
