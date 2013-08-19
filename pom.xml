@@ -28,7 +28,7 @@ THE SOFTWARE.
 	<groupId>org.analogiweb</groupId>
 	<artifactId>analogweb-helloworld</artifactId>
 	<packaging>war</packaging>
-	<version>0.8.0</version>
+	<version>0.8.1-SNAPSHOT</version>
 	<url>https://github.com/analogweb</url>
 	<organization>
 		<name>Analog Web Framework Development Team</name>
