@@ -74,4 +74,18 @@ public class HelloWorld {
     public Xml helloBean(@Bean FooBean foo) {
         return xml(foo);
     }
+
+    @Route
+    @Get
+    public void helloNothing() {
+        // Return no content(204)
+    }
+
+    @Route
+    @Get
+    public Renderable helloNull() {
+        // Return no content(204)
+        return null;
+    }
+
 }
