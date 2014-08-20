@@ -19,7 +19,7 @@
 	<groupId>org.analogiweb</groupId>
 	<artifactId>analogweb-helloworld</artifactId>
 	<packaging>war</packaging>
-	<version>0.8.2-SNAPSHOT</version>
+	<version>0.9.0-SNAPSHOT</version>
 	<url>https://github.com/analogweb</url>
 	<organization>
 		<name>Analog Web Framework Development Team</name>
@@ -41,15 +41,15 @@
 		</license>
 	</licenses>
 	<properties>
-		<maven.compiler.target>1.6</maven.compiler.target>
-		<maven.compiler.source>1.6</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+		<maven.compiler.source>1.7</maven.compiler.source>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 	<parent>
 		<groupId>org.analogweb</groupId>
 		<artifactId>analogweb-parent-modules</artifactId>
-		<version>4</version>
+		<version>6</version>
 		<relativePath />
 	</parent>
 	<build>
@@ -85,7 +85,7 @@
 		<dependency>
 			<groupId>org.analogweb</groupId>
 			<artifactId>analogweb-core</artifactId>
-			<version>0.8.2-SNAPSHOT</version>
+			<version>0.9.0-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 </project>
