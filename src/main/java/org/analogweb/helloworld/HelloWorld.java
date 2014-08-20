@@ -3,8 +3,6 @@ package org.analogweb.helloworld;
 import static org.analogweb.core.response.BasicResponses.text;
 import static org.analogweb.core.response.BasicResponses.xml;
 
-import java.net.URI;
-
 import org.analogweb.Renderable;
 import org.analogweb.annotation.Bean;
 import org.analogweb.annotation.Get;
@@ -29,7 +27,7 @@ import org.analogweb.helloworld.annotations.UserAgent;
 public class HelloWorld {
 
     public static void main(String... args) {
-        HttpServers.create(URI.create("http://localhost:8080")).start();
+        HttpServers.create("http://localhost:8080").run();
     }
 
     @Route
