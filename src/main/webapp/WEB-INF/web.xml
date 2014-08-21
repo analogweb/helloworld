@@ -6,7 +6,7 @@
 	
 	<filter>
 		<filter-name>AnalogFilter</filter-name>
-		<filter-class>org.analogweb.core.AnalogFilter</filter-class>
+		<filter-class>org.analogweb.servlet.core.AnalogFilter</filter-class>
 		<init-param>
 			<param-name>application.packages</param-name>
 			<param-value>org.analogweb.helloworld</param-value>

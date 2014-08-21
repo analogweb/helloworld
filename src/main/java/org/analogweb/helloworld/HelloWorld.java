@@ -13,7 +13,6 @@ import org.analogweb.annotation.RequestFormats;
 import org.analogweb.annotation.Route;
 import org.analogweb.annotation.XmlType;
 import org.analogweb.core.MediaTypes;
-import org.analogweb.core.httpserver.HttpServers;
 import org.analogweb.core.response.HttpStatus;
 import org.analogweb.core.response.Text;
 import org.analogweb.core.response.Xml;
@@ -25,10 +24,6 @@ import org.analogweb.helloworld.annotations.UserAgent;
  */
 @Route("/")
 public class HelloWorld {
-
-    public static void main(String... args) {
-        HttpServers.create("http://localhost:8080").run();
-    }
 
     @Route
     @Get
