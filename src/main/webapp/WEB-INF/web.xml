@@ -5,22 +5,16 @@
 	<display-name>Analog Sample Web Application</display-name>
 	
 	<filter>
-		<filter-name>AnalogFilter</filter-name>
+		<filter-name>Analogweb Filter</filter-name>
 		<filter-class>org.analogweb.servlet.core.AnalogFilter</filter-class>
 		<init-param>
 			<param-name>application.packages</param-name>
 			<param-value>org.analogweb.helloworld</param-value>
 		</init-param>
-		<!--
-		<init-param>
-			<param-name>application.specifier</param-name>
-			<param-value>.do</param-value>
-		</init-param>
-		-->
 	</filter>
 
 	<filter-mapping>
-		<filter-name>AnalogFilter</filter-name>
+		<filter-name>Analogweb Filter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 
