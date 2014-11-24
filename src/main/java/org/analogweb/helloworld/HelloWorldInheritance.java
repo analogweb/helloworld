@@ -9,8 +9,8 @@ public class HelloWorldInheritance extends HelloWorld {
 
     @Route
     @Override
-    public String helloworld(){
-        return "hello inherit world!";
+    public String ping(){
+        return "Inherit PONG!";
     }
 
     @Route

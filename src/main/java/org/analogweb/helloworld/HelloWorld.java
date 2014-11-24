@@ -1,22 +1,23 @@
 package org.analogweb.helloworld;
 
-import static org.analogweb.core.response.BasicResponses.text;
-import static org.analogweb.core.response.BasicResponses.xml;
+import static org.analogweb.core.response.BasicResponses.json;
 
-import org.analogweb.Renderable;
-import org.analogweb.annotation.Bean;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+
+import org.analogweb.acf.MultipartParam;
 import org.analogweb.annotation.Get;
-import org.analogweb.annotation.PathVariable;
+import org.analogweb.annotation.Param;
 import org.analogweb.annotation.Post;
-import org.analogweb.annotation.Put;
 import org.analogweb.annotation.RequestFormats;
+import org.analogweb.annotation.Resolver;
 import org.analogweb.annotation.Route;
-import org.analogweb.annotation.XmlType;
 import org.analogweb.core.MediaTypes;
-import org.analogweb.core.response.HttpStatus;
-import org.analogweb.core.response.Text;
-import org.analogweb.core.response.Xml;
+import org.analogweb.core.response.Json;
 import org.analogweb.helloworld.annotations.UserAgent;
+import org.analogweb.jackson.JacksonJsonValueResolver;
 
 /**
  * Hello Analog Web World!
@@ -27,58 +28,55 @@ public class HelloWorld {
 
     @Route
     @Get
-    public String helloworld() {
-        return "Hello World";
+    public String ping() {
+        return "PONG!";
     }
 
-    @Route("hello/{name}/world")
+    @Route("helloworld")
     @Get
-    public Text helloworld(@PathVariable("name") String name) {
-        return text(String.format("Hello %s World", name));
+    public String helloworld(@Param("n") String name) {
+        return String.format("Hello %s World", name);
     }
 
-    @Route
+    @Route("agent")
     @Get
-    public Text helloUserAgent(@UserAgent String userAgent) {
-        return text(String.format("Hello World %s", userAgent));
+    public String getUserAgent(@UserAgent String userAgent) {
+        return String.format("Hello World %s", userAgent);
     }
 
     @Route
-    @Get
-    public Xml helloXml() {
-        FooBean foo = new FooBean();
-        return xml(foo);
-    }
-
-    @Route
-    @RequestFormats
-    @Put
-    public Renderable helloXmlValue(@XmlType FooBean foo) {
-        if (foo == null) {
-            return HttpStatus.BAD_REQUEST.byReasonOf("XML entity required.");
-        }
-        return text("Hello World " + foo.getBaa());
-    }
-
-    @Route
-    @RequestFormats(MediaTypes.APPLICATION_FORM_URLENCODED)
-    @Put
     @Post
-    public Xml helloBean(@Bean FooBean foo) {
-        return xml(foo);
+    public String upload(@MultipartParam("filedata")File uploadFile) throws IOException {
+    	InputStream in = new FileInputStream(uploadFile);
+    	try{
+        	StringBuilder response = new StringBuilder();
+        	int b;
+        	while((b = in.read()) != -1){
+        		response.append((char)b);
+        	}
+            return response.toString();
+    	} finally {
+    		in.close();
+    	}
     }
 
-    @Route
+    @Route("json")
     @Get
-    public void helloNothing() {
-        // Return no content(204)
+    public Json getJson() {
+        return json(new FooBean());
     }
 
-    @Route
+    @Route("json")
+    @RequestFormats(MediaTypes.APPLICATION_JSON)
+    @Post
+    public Json getJson(@Resolver(JacksonJsonValueResolver.class) FooBean foo) {
+        return json(foo);
+    }
+
+    @Route("nothing")
     @Get
-    public Renderable helloNull() {
+    public void doNothing() {
         // Return no content(204)
-        return null;
     }
 
 }
