@@ -22,7 +22,7 @@
 	<groupId>org.analogiweb</groupId>
 	<artifactId>analogweb-helloworld</artifactId>
 	<packaging>war</packaging>
-	<version>0.9.2-SNAPSHOT</version>
+	<version>0.9.2</version>
 	<url>https://github.com/analogweb</url>
 	<organization>
 		<name>Analog Web Framework Development Team</name>
@@ -46,14 +46,14 @@
 	<properties>
 		<maven.compiler.target>1.7</maven.compiler.target>
 		<maven.compiler.source>1.7</maven.compiler.source>
-		<analogweb.version>0.9.1</analogweb.version>
+		<analogweb.version>0.9.2</analogweb.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 	<parent>
 		<groupId>org.analogweb</groupId>
 		<artifactId>analogweb-parent-modules</artifactId>
-		<version>7</version>
+		<version>8</version>
 		<relativePath />
 	</parent>
 	<build>

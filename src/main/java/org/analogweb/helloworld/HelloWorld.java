@@ -2,8 +2,6 @@ package org.analogweb.helloworld;
 
 import static org.analogweb.core.response.BasicResponses.json;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -46,8 +44,7 @@ public class HelloWorld {
 
     @Route
     @Post
-    public String upload(@MultipartParam("filedata")File uploadFile) throws IOException {
-    	InputStream in = new FileInputStream(uploadFile);
+    public String upload(@MultipartParam("filedata")InputStream in) throws IOException {
     	try{
         	StringBuilder response = new StringBuilder();
         	int b;
