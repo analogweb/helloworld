@@ -1,2 +1,2 @@
 #! /bin/sh
-mvn clean compile exec:java
+mvn clean compile exec:java -P netty

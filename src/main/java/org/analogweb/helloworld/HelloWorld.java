@@ -44,17 +44,17 @@ public class HelloWorld {
 
     @Route
     @Post
-    public String upload(@MultipartParam("filedata")InputStream in) throws IOException {
-    	try{
-        	StringBuilder response = new StringBuilder();
-        	int b;
-        	while((b = in.read()) != -1){
-        		response.append((char)b);
-        	}
+    public String upload(@MultipartParam("filedata") InputStream in) throws IOException {
+        try {
+            StringBuilder response = new StringBuilder();
+            int b;
+            while ((b = in.read()) != -1) {
+                response.append((char) b);
+            }
             return response.toString();
-    	} finally {
-    		in.close();
-    	}
+        } finally {
+            //    		in.close();
+        }
     }
 
     @Route("json")
@@ -75,5 +75,4 @@ public class HelloWorld {
     public void doNothing() {
         // Return no content(204)
     }
-
 }
