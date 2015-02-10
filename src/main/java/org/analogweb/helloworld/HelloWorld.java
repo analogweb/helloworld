@@ -8,14 +8,14 @@ import java.io.InputStream;
 import org.analogweb.acf.MultipartParam;
 import org.analogweb.annotation.Get;
 import org.analogweb.annotation.Param;
+import org.analogweb.annotation.PathVariable;
 import org.analogweb.annotation.Post;
 import org.analogweb.annotation.RequestFormats;
-import org.analogweb.annotation.Resolver;
 import org.analogweb.annotation.Route;
 import org.analogweb.core.MediaTypes;
 import org.analogweb.core.response.Json;
 import org.analogweb.helloworld.annotations.UserAgent;
-import org.analogweb.jackson.JacksonJsonValueResolver;
+import org.analogweb.jackson.JsonType;
 
 /**
  * Hello Analog Web World!
@@ -36,6 +36,12 @@ public class HelloWorld {
         return String.format("Hello %s World", name);
     }
 
+    @Route("hello/{who}/world")
+    @Get
+    public String helloSomeoneWorld(@PathVariable("who") String name) {
+        return String.format("Hello %s World", name);
+    }
+
     @Route("agent")
     @Get
     public String getUserAgent(@UserAgent String userAgent) {
@@ -51,6 +57,7 @@ public class HelloWorld {
             while ((b = in.read()) != -1) {
                 response.append((char) b);
             }
+            // echo upload contents.
             return response.toString();
         } finally {
             //    		in.close();
@@ -66,7 +73,7 @@ public class HelloWorld {
     @Route("json")
     @RequestFormats(MediaTypes.APPLICATION_JSON)
     @Post
-    public Json getJson(@Resolver(JacksonJsonValueResolver.class) FooBean foo) {
+    public Json getJson(@JsonType FooBean foo) {
         return json(foo);
     }
 
