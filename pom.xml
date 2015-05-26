@@ -22,14 +22,14 @@
   <groupId>org.analogiweb</groupId>
   <artifactId>analogweb-helloworld</artifactId>
   <packaging>war</packaging>
-  <version>0.9.3-SNAPSHOT</version>
+  <version>0.9.7-SNAPSHOT</version>
   <url>http://analogweb.org</url>
   <organization>
     <name>Analog Web Framework Development Team</name>
   </organization>
   <issueManagement />
   <ciManagement />
-  <inceptionYear>2014</inceptionYear>
+  <inceptionYear>2011</inceptionYear>
   <contributors />
   <scm>
     <connection>scm:git:git@github.com:analogweb/helloworld.git</connection>
@@ -46,14 +46,14 @@
   <properties>
     <maven.compiler.target>1.7</maven.compiler.target>
     <maven.compiler.source>1.7</maven.compiler.source>
-    <analogweb.version>0.9.3-SNAPSHOT</analogweb.version>
+    <analogweb.version>0.9.6</analogweb.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
   <parent>
     <groupId>org.analogweb</groupId>
     <artifactId>analogweb-parent-modules</artifactId>
-    <version>8</version>
+    <version>9</version>
     <relativePath />
   </parent>
   <build>
@@ -79,7 +79,7 @@
           </execution>
         </executions>
         <configuration>
-          <mainClass>org.analogweb.helloworld.Runner</mainClass>
+          <mainClass>org.analogweb.helloworld.HelloWorld</mainClass>
           <commandlineArgs>-Dfile.encoding=UTF-8</commandlineArgs>
         </configuration>
       </plugin>
@@ -94,11 +94,6 @@
     <dependency>
       <groupId>org.analogweb</groupId>
       <artifactId>analogweb-jackson</artifactId>
-      <version>${analogweb.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.analogweb</groupId>
-      <artifactId>analogweb-commons-fileupload</artifactId>
       <version>${analogweb.version}</version>
     </dependency>
   </dependencies>
@@ -120,7 +115,7 @@
           <plugin>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-maven-plugin</artifactId>
-            <version>9.2.2.v20140723</version>
+            <version>9.2.10.v20150310</version>
             <configuration>
               <scanIntervalSeconds>10</scanIntervalSeconds>
               <webApp>
