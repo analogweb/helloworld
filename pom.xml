@@ -22,7 +22,7 @@
   <groupId>org.analogiweb</groupId>
   <artifactId>analogweb-helloworld</artifactId>
   <packaging>war</packaging>
-  <version>0.9.7-SNAPSHOT</version>
+  <version>1</version>
   <url>http://analogweb.org</url>
   <organization>
     <name>Analog Web Framework Development Team</name>
@@ -46,7 +46,7 @@
   <properties>
     <maven.compiler.target>1.7</maven.compiler.target>
     <maven.compiler.source>1.7</maven.compiler.source>
-    <analogweb.version>0.9.6</analogweb.version>
+    <analogweb.version>0.9.7</analogweb.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
@@ -115,7 +115,7 @@
           <plugin>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-maven-plugin</artifactId>
-            <version>9.2.10.v20150310</version>
+            <version>9.2.11.v20150529</version>
             <configuration>
               <scanIntervalSeconds>10</scanIntervalSeconds>
               <webApp>
