@@ -46,14 +46,14 @@
   <properties>
     <maven.compiler.target>1.7</maven.compiler.target>
     <maven.compiler.source>1.7</maven.compiler.source>
-    <analogweb.version>0.9.7</analogweb.version>
+    <analogweb.version>0.9.10</analogweb.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
   <parent>
     <groupId>org.analogweb</groupId>
     <artifactId>analogweb-parent-modules</artifactId>
-    <version>9</version>
+    <version>10</version>
     <relativePath />
   </parent>
   <build>
