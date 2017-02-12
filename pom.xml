@@ -1,5 +1,5 @@
 <!-- 
-  The MIT Lisence Copyright (c) 2011 - 2015, Analog Web Framework Development Team.
+  The MIT Lisence Copyright (c) 2011 - 2017, Analog Web Framework Development Team.
   
   Permission is hereby granted, free of charge, to any person obtaining 
   a copy of this software and associated documentation files (the "Software"), 
@@ -46,14 +46,14 @@
   <properties>
     <maven.compiler.target>1.7</maven.compiler.target>
     <maven.compiler.source>1.7</maven.compiler.source>
-    <analogweb.version>0.9.11</analogweb.version>
+    <analogweb.version>0.10.0-SNAPSHOT</analogweb.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
   <parent>
     <groupId>org.analogweb</groupId>
     <artifactId>analogweb-parent-modules</artifactId>
-    <version>10</version>
+    <version>11</version>
     <relativePath />
   </parent>
   <build>
@@ -70,7 +70,7 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
-        <version>1.2.1</version>
+        <version>1.5.0</version>
         <executions>
           <execution>
             <goals>
@@ -104,7 +104,7 @@
         <dependency>
           <groupId>org.analogweb</groupId>
           <artifactId>analogweb-netty</artifactId>
-          <version>${analogweb.version}</version>
+          <version>${analogiweb.version}</version>
         </dependency>
       </dependencies>
     </profile>
@@ -115,7 +115,7 @@
           <plugin>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-maven-plugin</artifactId>
-            <version>9.2.11.v20150529</version>
+            <version>9.4.0.v20161208</version>
             <configuration>
               <scanIntervalSeconds>10</scanIntervalSeconds>
               <webApp>
